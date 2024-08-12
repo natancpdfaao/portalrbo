@@ -1,68 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Interativa</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-            font-family: Arial, sans-serif;
-        }
-        .button-container {
-            display: flex;
-            gap: 20px;
-        }
-        .btn-custom {
-            border-radius: 50%;
-            padding: 20px 40px;
-            font-size: 1.2rem;
-            text-align: center;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .btn-google-play {
-            background-color: #34a853;
-        }
-        .btn-google-play:hover {
-            background-color: #2a7d35;
-        }
-        .btn-info {
-            background-color: #007bff;
-        }
-        .btn-info:hover {
-            background-color: #0056b3;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botão de Habilitar/Desabilitar</title>
+<style>
+.toggle-button {
+appearance: none;
+-webkit-appearance: none;
+width: 60px;
+height: 30px;
+background: #ccc;
+border-radius: 15px;
+position: relative;
+outline: none;
+cursor: pointer;
+transition: background 0.3s;
+}
+.toggle-button:checked {
+background: #4caf50;
+}
+.toggle-button::before {
+content: '';
+position: absolute;
+width: 26px;
+height: 26px;
+background: #fff;
+border-radius: 50%;
+top: 2px;
+left: 2px;
+transition: transform 0.3s;
+}
+.toggle-button:checked::before {
+transform: translateX(30px);
+}
+</style>
 </head>
 <body>
+<label>
+<input type="checkbox" class="toggle-button" id="toggle">
+</label>
+<button id="actionButton" disabled>HABILITAR IMPRESSÃO</button>
 
-    <div class="container">
-        <h1>Bem-vindo à Página Interativa</h1>
-        <div class="button-container">
-            <a href="https://play.google.com/store/apps/details?id=br.com.novosistemas.srgavabarbearia" class="btn-custom btn-google-play" target="_blank">Playstore</a>
-            <button class="btn-custom btn-info" onclick="alert('Você clicou no botão!')">Clique Aqui</button>
-        </div>
-    </div>
+<script>
+const toggle = document.getElementById('toggle');
+const actionButton = document.getElementById('actionButton');
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+toggle.addEventListener('change', function() {
+actionButton.disabled = !this.checked;
+});
+</script>
 </body>
 </html>
