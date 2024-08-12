@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interativa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .btn-custom {
+            border-radius: 50%;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-google-play {
+            background-color: #34a853;
+        }
+        .btn-google-play:hover {
+            background-color: #2a7d35;
+        }
+        .btn-info {
+            background-color: #007bff;
+        }
+        .btn-info:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo à Página Interativa</h1>
+        <div class="button-container">
+            <a href="https://play.google.com/store/apps/details?id=br.com.novosistemas.srgavabarbearia" class="btn-custom btn-google-play" target="_blank">Playstore</a>
+            <button class="btn-custom btn-info" onclick="alert('Você clicou no botão!')">Clique Aqui</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
